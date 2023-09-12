@@ -7,13 +7,13 @@ const Taskmodel = require("./Models/Task")
 //middlewares to parsedata and to communicate backend and frontend . 
 app.use(cors({
     origin: 'https://alhansat-kanban-board-ui.vercel.app/',
-    methods:["POST","GET"],
-    credentials:true
+    methods: ["POST", "GET"],
+    credentials: true
 }));
 app.use(express.json());
 
 //mongoose connection
-mongoose.connect('mongodb+srv://srmate1516:smkanban@cluster0.mah2nda.mongodb.net/');
+mongoose.connect('mongodb+srv://srmate1516:smkanban@cluster0.mah2nda.mongodb.net/?retryWrites=true&w=majority');
 
 
 app.get("/", (req, resp) => {
