@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 //mongoose connection
-mongoose.connect('mongodb://127.0.0.1:27017/Kanban');
+mongoose.connect('mongodb+srv://srmate1516:smkanban@cluster0.mah2nda.mongodb.net/');
 
 
 //route to get information of To do Task.
