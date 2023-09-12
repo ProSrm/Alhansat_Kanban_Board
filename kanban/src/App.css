@@ -1,0 +1,59 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 12vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+input {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+h4 {
+  color: aqua
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+@media (max-width: 768px) {
+
+  .App-header {
+    background-color: #282c34;
+    min-height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+    width: 90%;
+    max-width: 300px;
+  }
+
+
+}

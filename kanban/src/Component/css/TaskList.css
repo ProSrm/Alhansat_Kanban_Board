@@ -1,0 +1,33 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.TOdo,
+.Doing,
+.Done {
+    border: 2px solid black;
+    min-height: 100vh;
+    min-width: 60vh;
+    margin: 2px;
+}
+
+
+@media (max-width: 768px) {
+
+    .main {
+        flex-direction: column;
+    }
+
+    .TOdo,
+    .Doing,
+    .Done {
+        min-height: auto;
+        min-width: 90%;
+        margin: 10px 0;
+    }
+
+
+}
