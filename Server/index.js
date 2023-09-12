@@ -12,6 +12,10 @@ app.use(express.json());
 mongoose.connect('mongodb+srv://srmate1516:smkanban@cluster0.mah2nda.mongodb.net/');
 
 
+app.get("/", (req, resp) => {
+    resp.json("Hello bakend here !!!")
+})
+
 //route to get information of To do Task.
 app.get("/getTasksToDo", (req, res) => {
     Taskmodel.find({ Status: "TOdo" })
