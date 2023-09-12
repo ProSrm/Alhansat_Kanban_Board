@@ -6,7 +6,9 @@ const Taskmodel = require("./Models/Task")
 
 //middlewares to parsedata and to communicate backend and frontend . 
 app.use(cors({
-    origin: 'https://alhansat-kanban-board-ui.vercel.app/'
+    origin: 'https://alhansat-kanban-board-ui.vercel.app/',
+    methods:["POST","GET"],
+    credentials:true
 }));
 app.use(express.json());
 
