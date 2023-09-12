@@ -18,7 +18,7 @@ function App() {
       alert("please Enter Task and Description first ")
     else {
       e.preventDefault();
-      axios.post("http://localhost:3001/addTask", { Task: Task, Desc: Description, Status: "TOdo" })
+      axios.post("https://alhansat-kanban-board-api.vercel.app/addTask", { Task: Task, Desc: Description, Status: "TOdo" })
         .then(result => {
           console.log(result);
           setRefreshTaskList(!refreshTaskList)
