@@ -19,7 +19,7 @@ const TaskCard = (props) => {
     }
 
     const handleDelete = (id) => {
-        axios.delete('http://localhost:3001/delete/' + id)
+        axios.delete('https://alhansat-kanban-board-api.vercel.app/delete/' + id)
             .then(result => {
                 console.log('Task deleted');
             })
@@ -28,7 +28,7 @@ const TaskCard = (props) => {
 
     //update on update click icon 
     const handleSaveClick = () => {
-        axios.put(`http://localhost:3001/update/${task._id}`, editedTask)
+        axios.put(`https://alhansat-kanban-board-api.vercel.app/update/${task._id}`, editedTask)
             .then(() => {
                 console.log('Task updated');
                 setIsEditing(false); // Exit edit mode

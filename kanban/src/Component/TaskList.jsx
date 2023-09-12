@@ -30,7 +30,7 @@ const TaskList = (props) => {
             setToDO(updatedTasks);
             setDoing([...Doing, taskToMove])
 
-            axios.post(`http://localhost:3001/updateTaskStatus/${taskid}`, { status: targetSection })
+            axios.post(`https://alhansat-kanban-board-api.vercel.app/updateTaskStatus/${taskid}`, { status: targetSection })
                 .then((response) => {
                     console.log("Task status updated in the database:", response.data);
                 })
@@ -54,7 +54,7 @@ const TaskList = (props) => {
             setToDO(updatedTasks);
             setDone([...Done, taskToMoveDone])
 
-            axios.post(`http://localhost:3001/updateTaskStatus/${taskid}`, { status: targetSection })
+            axios.post(`https://alhansat-kanban-board-api.vercel.app/updateTaskStatus/${taskid}`, { status: targetSection })
                 .then((response) => {
                     console.log("Task status updated in the database:", response.data);
                 })
@@ -80,7 +80,7 @@ const TaskList = (props) => {
             // setToDO(updatedTasks);
             setToDO([...ToDO, taskToMoveDone])
 
-            axios.post(`http://localhost:3001/updateTaskStatus/${taskid}`, { status: targetSection })
+            axios.post(`https://alhansat-kanban-board-api.vercel.app/updateTaskStatus/${taskid}`, { status: targetSection })
                 .then((response) => {
                     console.log("Task status updated in the database:", response.data);
                 })
@@ -96,21 +96,21 @@ const TaskList = (props) => {
 
     //UseEffect for getting ToDO data  
     useEffect(() => {
-        axios.get("http://localhost:3001/getTasksToDo")
+        axios.get("https://alhansat-kanban-board-api.vercel.app/getTasksToDo")
             .then(result => setToDO(result.data))
             .catch(err => console.log(err))
     }, [refreshTaskList, Doing])
 
     //useEffect for getting Doing data 
     useEffect(() => {
-        axios.get("http://localhost:3001/getTasksDoing")
+        axios.get("https://alhansat-kanban-board-api.vercel.app/getTasksDoing")
             .then(result => setDoing(result.data))
             .catch(err => console.log(err))
     }, [refreshTaskList, Done])
 
     //useEffect for getting Done data 
     useEffect(() => {
-        axios.get("http://localhost:3001/getTasksDone")
+        axios.get("https://alhansat-kanban-board-api.vercel.app/getTasksDone")
             .then(result => setDone(result.data))
             .catch(err => console.log(err))
     }, [refreshTaskList, Doing])
