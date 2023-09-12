@@ -5,7 +5,9 @@ const app = express();
 const Taskmodel = require("./Models/Task")
 
 //middlewares to parsedata and to communicate backend and frontend . 
-app.use(cors());
+app.use(cors({
+    origin: 'https://alhansat-kanban-board-ui.vercel.app/'
+}));
 app.use(express.json());
 
 //mongoose connection
