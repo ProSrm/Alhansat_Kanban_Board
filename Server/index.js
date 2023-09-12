@@ -8,7 +8,7 @@ const Taskmodel = require("./Models/Task")
 app.use(cors({
     origin: 'https://alhansat-kanban-board-frontend.vercel.app/',
     methods: ["POST", "GET"],
-    credentials: true
+    // credentials: true
 }));
 app.use(express.json());
 
