@@ -12,13 +12,13 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-const corsoption = {
-    origin: ["https://alhansat-kanban-board-frontend.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true
-}
-//middlewares to parsedata and to communicate backend and frontend . 
-app.use(cors(corsoption));
+// const corsoption = {
+//     origin: ["https://alhansat-kanban-board-frontend.vercel.app"],
+//     methods: ["POST", "GET"],
+//     credentials: true
+// }
+// //middlewares to parsedata and to communicate backend and frontend . 
+// app.use(cors(corsoption));
 
 app.use(express.json());
 //mongoose connection
