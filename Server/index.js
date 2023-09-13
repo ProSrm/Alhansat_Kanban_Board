@@ -11,16 +11,12 @@ app.use(cors({
     methods: ["POST", "GET"],
     credentials: true
 }));
-// app.use(express.json());
-// app.use((_, res, next) => {
-//     res.set('Access-Control-Allow-Origin', '*'); // or 'localhost:8888'
-//     res.set('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
-//     res.set(
-//         'Access-Control-Allow-Headers',
-//         'Origin, X-Requested-With, Content-Type, Accept'
-//     );
-//     return next();
-// });
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://alhansat-kanban-board-frontend.vercel.app');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 //mongoose connection
 mongoose.connect('mongodb+srv://srmate1516:smkanban@cluster0.mah2nda.mongodb.net/first?retryWrites=true&w=majority');
 
