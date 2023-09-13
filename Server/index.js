@@ -18,7 +18,7 @@ const corsoption = {
     credentials: true
 }
 //middlewares to parsedata and to communicate backend and frontend . 
-app.use(cors());
+app.use(cors(corsoption));
 
 app.use(express.json());
 //mongoose connection
