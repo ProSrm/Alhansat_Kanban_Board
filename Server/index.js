@@ -5,18 +5,22 @@ const app = express();
 const Taskmodel = require("./Models/Task")
 const dotenv = require("dotenv");
 
-//middlewares to parsedata and to communicate backend and frontend . 
-app.use(cors({
-    origin: ["https://alhansat-kanban-board-frontend.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true
-}));
+
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://alhansat-kanban-board-frontend.vercel.app');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
+// const corsoption = {
+//     origin: ["https://alhansat-kanban-board-frontend.vercel.app"],
+//     methods: ["POST", "GET"],
+//     credentials: true
+// }
+//middlewares to parsedata and to communicate backend and frontend . 
+app.use(cors());
+
+app.use(express.json());
 //mongoose connection
 mongoose.connect('mongodb+srv://srmate1516:smkanban@cluster0.mah2nda.mongodb.net/first?retryWrites=true&w=majority');
 
