@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 
 //middlewares to parsedata and to communicate backend and frontend . 
 app.use(cors({
-    origin: ['https://alhansat-kanban-board-frontend.vercel.app'],
+    origin: ["https://alhansat-kanban-board-frontend.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true
 }));

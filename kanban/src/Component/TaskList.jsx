@@ -16,6 +16,7 @@ const TaskList = (props) => {
         e.preventDefault();
         console.log("drag started");
     }
+    axios.defaults.withCredentials = true;
 
     //funciton to drag completion on (Doing section )
 

@@ -12,6 +12,7 @@ const TaskCard = (props) => {
         Task: task.Task,
         Desc: task.Desc,
     });
+    axios.defaults.withCredentials = true;
 
     const dragStarting = (e, _id) => {
         e.dataTransfer.setData('taskid', _id)
