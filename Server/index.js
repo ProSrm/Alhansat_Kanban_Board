@@ -12,11 +12,11 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-// const corsoption = {
-//     origin: ["https://alhansat-kanban-board-frontend.vercel.app"],
-//     methods: ["POST", "GET"],
-//     credentials: true
-// }
+const corsoption = {
+    origin: ["https://alhansat-kanban-board-frontend.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+}
 //middlewares to parsedata and to communicate backend and frontend . 
 app.use(cors());
 
