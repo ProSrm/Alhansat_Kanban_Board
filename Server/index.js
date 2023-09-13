@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const cors = require('cors');
 const app = express();
 const Taskmodel = require("./Models/Task")
+const dotenv = require("dotenv");
 
 //middlewares to parsedata and to communicate backend and frontend . 
 app.use(cors({
@@ -11,10 +12,21 @@ app.use(cors({
     credentials: true
 }));
 app.use(express.json());
-
+app.use((_, res, next) => {
+    res.set('Access-Control-Allow-Origin', '*'); // or 'localhost:8888'
+    res.set('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
+    res.set(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    return next();
+});
 //mongoose connection
 mongoose.connect('mongodb+srv://srmate1516:smkanban@cluster0.mah2nda.mongodb.net/first?retryWrites=true&w=majority');
 
+dotenv.config({
+    path: './data/config.env'
+})
 
 app.get("/", (req, resp) => {
     resp.json("Hello bakend here !!!")
