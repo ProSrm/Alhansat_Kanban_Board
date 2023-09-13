@@ -7,20 +7,20 @@ const dotenv = require("dotenv");
 
 //middlewares to parsedata and to communicate backend and frontend . 
 app.use(cors({
-    origin: 'https://alhansat-kanban-board-frontend.vercel.app',
+    origin: ['https://alhansat-kanban-board-frontend.vercel.app'],
     methods: ["POST", "GET"],
     credentials: true
 }));
-app.use(express.json());
-app.use((_, res, next) => {
-    res.set('Access-Control-Allow-Origin', '*'); // or 'localhost:8888'
-    res.set('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
-    res.set(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept'
-    );
-    return next();
-});
+// app.use(express.json());
+// app.use((_, res, next) => {
+//     res.set('Access-Control-Allow-Origin', '*'); // or 'localhost:8888'
+//     res.set('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
+//     res.set(
+//         'Access-Control-Allow-Headers',
+//         'Origin, X-Requested-With, Content-Type, Accept'
+//     );
+//     return next();
+// });
 //mongoose connection
 mongoose.connect('mongodb+srv://srmate1516:smkanban@cluster0.mah2nda.mongodb.net/first?retryWrites=true&w=majority');
 
