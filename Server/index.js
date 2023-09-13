@@ -6,19 +6,19 @@ const Taskmodel = require("./Models/Task")
 const dotenv = require("dotenv");
 
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://alhansat-kanban-board-frontend.vercel.app');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
-// const corsoption = {
-//     origin: ["https://alhansat-kanban-board-frontend.vercel.app"],
-//     methods: ["POST", "GET"],
-//     credentials: true
-// }
-// //middlewares to parsedata and to communicate backend and frontend . 
-// app.use(cors(corsoption));
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', 'https://alhansat-kanban-board-frontend.vercel.app');
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+//     next();
+// });
+const corsoption = {
+    origin: ["https://alhansat-kanban-board-frontend.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+}
+//middlewares to parsedata and to communicate backend and frontend . 
+app.use(cors(corsoption));
 
 app.use(express.json());
 //mongoose connection
